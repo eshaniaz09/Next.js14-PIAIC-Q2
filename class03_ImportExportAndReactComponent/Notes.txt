@@ -1,0 +1,58 @@
+l********************Import and Export***********************
+
+=> two types of import and export:
+The code we import from the other developer through node module by " npm i " is saved 
+in node_modules folder and  we can  import it  as:
+
+import React from "react";
+
+but when we use ./ or @ in import code then its mean we import code from own own file or folder created.
+like: 
+import Image from "next/image";
+
+if the code is simply exported then we imported with { } and if the code is default exported the we don't use { } , we import with name only 
+import { React} from "react";
+import React from "react";
+
+
+examples:
+export var a: number = 39;
+import { a } from './test'
+        OR
+var a = 39;
+export default a;
+import esha from './test'
+
+All the css files must be import in layout.tsx as 
+
+import './style.css'
+
+
+
+
+******************** React Component******************
+
+Single page application: returns only one html file
+multiple page application: returns multiple html files depends on the number of pages
+react only support Single page application
+next js support multiple page application is best for SEO 
+
+=> In order to make multiple pages => in different folders we must make page.tsx file
+
+Code in page.tsx: 
+Requirements:
+1-Make a function that returns html and css and this function is called react Component (make the function name start with capital letter)
+2-export default function
+
+note: all the tags of the html in r=next.js must be closed
+
+
+***Babel and webpack**** used to compile .tsx file by making separate files of html , css and ts (browser do not understand .tsx file directly) 
+
+*******How to Link multiple pages********
+
+import Link from 'next/link'
+
+<link href={"/blog"}> <div> Click me to visit my blog section 🙂</div> </link>
+
+

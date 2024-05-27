@@ -1,0 +1,13 @@
+we use different languages for web development but we use typescript because of popularity.
+
+web development roadmap: 
+
+
+                       WEB-DEVELOPMENT
+                         *    *    *
+                        *     *     *
+                       *      *      *
+                      *       *        *
+                     *     typescript    *
+                 html5  (functionality)  CSS
+               (structure)             designing

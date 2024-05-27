@@ -1,0 +1,13 @@
+tsconfig.json => A configure file or compiler of typescript
+
+tailwind.config.ts => configuration of tailwind CSS framework
+
+READ.md => syntax written in markdown languages , used in github
+
+postcss.config.ts => overall configuration of CSS (details of frameworks)
+
+package.json => file contains the details , info and versions , dependencies , how to start , deploy your project  and  libraries used in the project 
+
+public folder => contains all the assets=> videos , images, etc...
+
+app folder => also called app router , all of owr working is in app router folder
