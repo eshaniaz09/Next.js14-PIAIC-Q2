@@ -1,0 +1,78 @@
+There are only one loop used in the return html of the react component function
+
+******************MAP*********************
+
+Example 1: 
+
+const About = () => {
+const listOfDirectors = ["Naveed", "Abdullah" , "Ahmad", "Umer", "Umair", "waqas", "tayab"]
+
+  return (
+    <div>
+      <h1>List of Directors</h1> 
+      {listOfDirectors.map((item, index) => {
+        return (
+          // eslint-disable-next-line react/jsx-key
+          <h2>{index+1}- { item}</h2>
+        )
+      })}
+    </div>
+  )
+}
+
+
+Example 2: 
+
+
+const About = () => {
+  const listOfDirectors: directorTypes[] = [{
+    name: "naveed",
+    title: "CEO",
+    intro: "something"
+  },
+    {
+      name: "Ahmad",
+      title: "CEO",
+      intro: "something"
+    },
+    {
+      name: "Zia",
+      title: "CEO",
+      intro: "something"
+    },
+    {
+      name: "Abdullah",
+      title: "CEO",
+      intro: "something"
+    },
+    {
+      name: "Tayyab",
+      title: "CEO",
+      intro: "something"
+    }
+  
+  ]
+
+  return (
+    <div>
+      <h1 className='text-4xl text-bold text-yellow-400 text-center'>List of Directors</h1> 
+
+      {listOfDirectors.map((item, index) => {
+        return (
+          <div className='ml-8 '>
+            {index % 2 === 0 &&
+              <>
+              <h1 className='text-red-800 text-2xl' >Person : {index}</h1>
+              <h1>Name : {item.name}</h1>
+              <h2>Tittle : {item.title}</h2>
+              <h3>Introduction : {item.intro}</h3>
+            </>
+            }
+            </div> 
+        )
+      })}
+    </div>
+  )
+}
+
+Example 3: See the about folder in app router
