@@ -1,0 +1,30 @@
+***************Props-Next.js-14***************
+Props are used when we are using the Components and want to display the components 
+with some changes in different pages
+
+How to make props:
+=>Data ts always send from parent to child in a props
+=> Data is passed from where it is called like:
+              <Button title="Apply" />
+here : title is the prop name, we can pass unlimited props in a react function call              
+
+=>Now in the react function definition, there will be only parameter => props
+
+type buttonType = {
+    title: string
+}
+
+How to run the typescript code in html => { }
+
+
+function Button(props: buttonType){
+    console.log(`props = ${props.title});
+    return(
+        <button>{props.tittle}</button>
+    )
+}
+
+we can also define the types of the props in separate folder => app/types/componentTypes.ts
+
+
+props can be nested
