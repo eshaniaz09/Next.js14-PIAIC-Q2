@@ -1,21 +1,19 @@
 import React from 'react'
+import Button from '../button/button'
+import { cardType } from '@/types/cardType'
 
-const Card = () => {
+const Card = (props: cardType) => {
+  
   return (
-<div className="h-[12rem] w-[23rem] rounded  shadow-lg bg-white">
+<div className="h-auto w-[23rem] rounded  shadow-lg bg-white">
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2 text-black">Card 1</div>
+        <div className="font-bold text-xl mb-2 text-black">{props.heading}</div>
         <p className="text-gray-700 text-base">
-          This is a sample card component created with Next.js and Tailwind CSS.
+          {props.description}
         </p>
       </div>
       <div className="px-6 pt-4 pb-2">
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          
-        >
-          Click me
-        </button>
+      <Button title="Learn More" />
       </div>
     </div>
   )
