@@ -4,18 +4,18 @@ The main job of application server is to accept , understand or respond to the r
 Hardware server : when we write a code in html and css we upload it in server
 
 React is the client framework , used for only front end development (html,css and ts, react , angular , view.js : all are browser application it is not have any impact on server)
-Next.js is the server application ,it is also called backend development
+Next.js is the server application ,it is also used in backend development
 we also call it as : next.js server, node.js server, python flask server, python django server , ph server
 
 
-There are some servers that are pre-built-in link : Nginx or apache
+There are some servers that are pre-built-in like : Nginx or apache or netlify or surge
 Nginx sever have the ability to perform the job to receive  requests of client , process and respond to clients , we have to just
 download Nginx and place our html, css files in it's public folder.
 But Nginx have some specific jobs
 
 ***************Request Respond Workings*************
 HTTP protocol jobs:  send request from client to server and respond to client.
-only one method used in HTTP protocol : get()
+only one method used in HTTP protocol in browser : get()
 
 Example: 
 // request sending.........
@@ -25,15 +25,15 @@ GET(): request
 // respond to request.........
 Nginx: server application 
 There is the port number of every application.
-Server application also need the port number  link : 3000 , already used port numbers are not used again
+Server application also need the port number  like : 3000 , already used port numbers are not used again
 
 ***********Domain name system******************
 It is difficult for humans to understand the port number and ip addresses 
 Here :
-129:213:131:12 : 3000 => techloset.com/ here "/" is the by-default
-329:451:161:65 : 3000 => facebook.com/contact  => here contact is the rout (rout have segments means making sub-routs)
+129:213:131:12 : 3000 => techloset.com/ here "/" is the by-default forward slash rout (main page,home page,app/page.tsx page)
+329:451:161:65 : 3000 => facebook.com/contact  => here contact is the rout (rout have segments means making sub-routs, app/contact/page.tsx)
 
-postman is the software that gives the actual respond to the requests (returns the html code) , it dose not render the page 
+postman is the software that gives the actual respond to the requests (returns the html code or custom language code) , it dose not render the page 
 browser can also render the page and respond too the requests 
 
 we can deploy a website using netlify and surge for free....
