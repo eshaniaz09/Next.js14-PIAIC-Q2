@@ -3,8 +3,8 @@
 // import { b } from './test';
 // console.log(b);
 import Link from 'next/link'
-import esha, { b } from './test'
-console.log(`RollNumber: ${esha}, Name: ${b}`);
+// import esha, { b } from './test'
+// console.log(`RollNumber: ${esha}, Name: ${b}`);
 
 
 import React from 'react'
