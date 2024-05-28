@@ -1,0 +1,12 @@
+*****************Components-based-engineering********************
+
+Every thing that is repeated in a website must be a component that is reuseable.
+
+=> In a multiple page application: We make the pages at the root level like making the sub-trees of the main page of website,
+then we make the Components in that pages that are reuseable in the code. we do not make the rout files (page.tsx or rout.ts) in Components folder
+
+Props: 
+=> in a simple functions we pass the parameters but in the .tsx (react) function , we pass the props
+
+*********Conditional-rendering**********
+to be continued......... :)
