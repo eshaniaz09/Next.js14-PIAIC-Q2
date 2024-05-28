@@ -13,11 +13,11 @@ const Home = () => {
           <h1>Card-container</h1>
          <Button title="Apply" />
           <div className="cards grid grid-cols-3 justify-evenly  gap-3">
-            <Card heading='Web development' description='web development Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do anim id est laborum.'/>
+           <Card isDescription={true} heading='Web development' description='web development Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do anim id est laborum.'/>
             <Card  heading='Mobile development' description=' mobile dev Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do anim id est laborum.'/>
-            <Card heading='Word press development' description='word press dev Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do anim id est laborum.' />
+            <Card isDescription={true} heading='Word press development' description='word press dev Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do anim id est laborum.' />
             <Card heading='Block-chain development'description='block-chain dev Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do anim id est laborum.'/>
-            <Card heading='Fluter development' description='mobile dev Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do anim id est laborum.'/>
+            <Card isDescription={true} heading='Fluter development' description='mobile dev Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do anim id est laborum.'/>
             <Card heading='Android development' description='mobile dev Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do anim id est laborum.'/>
           </div>
         </div>
