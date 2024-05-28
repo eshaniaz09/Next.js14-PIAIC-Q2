@@ -1,0 +1,20 @@
+***************Conditional-rendering*******************
+All the typescript functions are not supported in the react function means in return html of react react component 
+There are only limited functions that are supported
+We can write any kind of  typescript above the return (//html code).
+
+************Types of typescript that is used in the return html code******************
+1- We can print any typescript variable using { }
+2- Conditional operator
+3-And operator (same as Conditional operator but not include else statement)
+example of Conditional operator :
+
+{props.showTag ? <Tag title="web" /> : "No tags available"}
+                 OR
+{count>5? <span className='text-black'>{count}</span>: null }  
+                 OR
+<div style={{backgroundColor: props.isDescription? 'yellow' : 'white'}} className="h-auto w-[23rem] rounded  shadow-lg bg-white">
+
+
+Conditional operator is useful for the multiple or single page applications like we can 
+show and hide navbar or footer etc from some pages of website 
