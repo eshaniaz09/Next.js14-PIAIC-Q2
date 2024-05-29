@@ -1,0 +1,31 @@
+***************Event Handling**************
+
+When we click a button , something happens/change is called events
+
+All the Event handling functions are not used in server
+When we make components or pages , they are render by-default in the server side
+When we use the onClick handle , we cannot render it on server side, we have have to render
+it on the client side
+
+=> onClick is the client component
+
+*********How to render onClick event handler on the client side********
+we write on the top of the page:
+"use client"
+
+use client means that all the html created in that page is not in the server side, but it 
+is created in the browser (client side)
+
+************Next.js Server Component****************
+
+=>When the next.js page or component is server , then it is the html tags are printed in the browser are made by the server or we can say comes from server side.
+
+************Next.js Client component***************
+
+=> But when the next.js page or component is client component using "use client" code , then is not html tags, they are ts and js code that comes in the browser,
+it is the browser responsibility to convert it into html tags and render or print them in browser
+
+
+************Disadvantage of rendering client side**************
+=> It effects the seo of the component or page.
+=> It is the limitation of the next.js that we cannot render component having onClick handler on server side.
