@@ -27,5 +27,5 @@ it is the browser responsibility to convert it into html tags and render or prin
 
 
 ************Disadvantage of rendering client side**************
-=> It effects the seo of the component or page.
+=> It effects the SEO of the component or page.
 => It is the limitation of the next.js that we cannot render component having onClick handler on server side.
