@@ -1,0 +1,70 @@
+*******************State-variable/useStateHook*************************
+
+In react, the page is render only one time in the browser screen , the interface will not change when the conditions are applied in any case.
+React gives us a powerful variable , by any change in that variable the return html of the page or ui of the page also changes . This varaible is called state variable.
+state variable has same functionalities of the simple variables(var,const,let) but it is more powerful.it has the ability to rerender the html of page or ui of page.
+=> state vaiables are also render in client side
+
+***********How to use state variable********************
+
+"use client"
+import {useState} from 'react'
+
+
+const hello = ()=>{
+
+const [variableName,setVariableNewValue] = useState(value of variable)
+
+return(
+  <div></div>
+)
+}
+
+
+Example of using useState hooks :
+
+/* eslint-disable react-hooks/rules-of-hooks */
+"use client"
+import Button from "../button/button"
+import {useState} from "react"
+
+const counterSection = () => {
+    const [countState,setCountState] = useState(0)
+    const onClickAddHandler = () => {
+        setCountState(countState+1)
+        console.log("Value added by onClickAddHandler",countState)
+    }
+    const onClickMinusHandler = () => {
+        setCountState(countState-1)
+        console.log("Value added by onClickMinusHandler",countState)
+
+    }
+  return (
+    <div className="flex flex-row gap-2 mt-6 justify-center items-center">
+          <Button title={"+"} onClickHandler={onClickAddHandler} />
+          <span>{countState}</span>
+          <Button title={"-"} onClickHandler={onClickMinusHandler } />
+    </div>
+  )
+}
+
+export default counterSection
+
+More examples:
+
+    const [countState, setCountState] = useState(0)
+    const [myName, setName] = useState("Hello esha")
+    const [myDetails, setDetails] = useState({ name: "esha", age: 20, degree: "BS(SE)" })
+    const [books, setBooks] = useState(["physics", "maths", "English", "urdu"])
+    const [isMYAccount, setMyAccount] = useState(false)
+
+
+
+Note: When we use many useState vaiables , it effects the performance of the application
+
+
+
+
+
+
+
