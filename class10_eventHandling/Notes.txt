@@ -29,3 +29,112 @@ it is the browser responsibility to convert it into html tags and render or prin
 ************Disadvantage of rendering client side**************
 => It effects the SEO of the component or page.
 => It is the limitation of the next.js that we cannot render component having onClick handler on server side.
+
+
+Now our target to use "use client" as less as possible.
+=> We have to use the use client in  components.
+=> if we use "use client" in the layout.tsx file, then its mean all the pages are rendering from client side.
+=>And also All the pages in react is client side.
+=> In the dashboard apps, there is no need of seo , so that we use "use client" in the layout.tsx
+
+=> For all the interactivity, we need client side rendering
+
+
+Example: 
+
+app/components/button => only one global button component is made 
+
+import { buttonType } from '@/types/buttonTypes';
+import React from 'react'
+
+const Button = (props:buttonType) => {
+
+  return (
+    <div className=''>
+      <button onClick={props.onClickHandler} className='bg-yellow-400 text-black p-2 text-base mt-36 rounded '>{props.title}</button>
+      
+    </div>
+  )
+}
+
+export default Button
+
+=> Then this component is used in sub-components of many pages like where use "use client" rendering
+
+
+Page 1:  Contact page
+
+app/contact(page.tsx)/components(contactForm.tsx)
+
+"use client"
+import Button from '@/app/components/button/button'
+
+
+const ContactForm = () => {
+  return (
+    <div>
+          <Button title='Contact Me' onClickHandler={() => {
+              alert("OnClick by contact page")
+      }} /> 
+    </div>
+  )
+}
+
+export default ContactForm
+
+
+And its page.tsx is => app/contact/page.tsx =>
+import React from 'react'
+import ContactForm from './components/contactForm'
+
+const Contact = () => {
+  return (
+    <div>
+          <h1>Contact Us</h1>
+          <ContactForm />
+    </div>
+  )
+}
+
+export default Contact
+
+
+Page 2 : Counter Page 
+app/counter/components/counterSection/counterSection.tsx
+
+"use client"
+import Button from "../button/button"
+
+const counterSection = () => {
+    const onClickButton = () => {
+        alert("Hello esha")
+    }
+  return (
+    <div>
+      <Button title={"Add Me"} onClickHandler={onClickButton } />
+    </div>
+  )
+}
+
+export default counterSection
+
+
+app/counter/page.tsx :
+
+import CounterSection from "../components/counterSection/counterSection"
+
+
+const EventsNextJS = () => {
+  return (
+    <div className='flex flex-col justify-center items-center'>
+      <h1 className="mt-20">Welcome to counter app.</h1>
+      <CounterSection />
+    </div>
+  )
+}
+
+export default EventsNextJS
+
+
+
+

@@ -1,16 +1,12 @@
-"use client"
-import React from 'react'
+import CounterSection from "../components/counterSection/counterSection"
+
 
 const EventsNextJS = () => {
-    let addValue = 0;
-    const onClickHandler = () => {
-        addValue = addValue + 1;
-    }
-    console.log(addValue);
-    
   return (
-    <div className='flex justify-center items-center'>
-      <button onClick={onClickHandler} className='bg-yellow-400 text-black p-2 text-base mt-36 rounded '>{addValue}</button>
+    <div className='flex flex-col justify-center items-center'>
+      <h1 className="mt-20">Welcome to counter app.</h1>
+      <CounterSection />
+
     </div>
   )
 }
