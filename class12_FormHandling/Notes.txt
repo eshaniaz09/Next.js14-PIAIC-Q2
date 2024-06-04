@@ -1,0 +1,22 @@
+******************Complete-software-lifecycle*******************
+
+
+
+# 3-layer-architecture-of-software-cycle
+
+    client  <=============>  server   <==============>  Database
+
+ Browser-next.js-client => next.js-server(rout.ts) => software(database)
+
+
+
+******************onChange event handler****************
+=> We use onChange event handler when we want to get the data may be from some input box.
+=> We pass the parameter while using onChange event handler.
+=> This parameter contains many things when some change occur 
+=> If we want to get the value that returns on change use event.target.value
+
+
+
+Note we can also define the type of state variable
+   const [userName, setUserName] = useState<string>("User Name")
