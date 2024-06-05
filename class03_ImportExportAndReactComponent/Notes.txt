@@ -11,8 +11,8 @@ like:
 import {Image} from "./image";
 
 if the code is simply exported then we imported with { } and if the code is default exported the we don't use { } , we import with name only 
-import { React} from "react";
-import React from "react";
+import { React} from "react";    => export React ;
+import React from "react";       => export default react;
 
 
 examples:
