@@ -20,3 +20,23 @@
 
 Note we can also define the type of state variable
    const [userName, setUserName] = useState<string>("User Name")
+
+
+*****************Spread-operator*********************
+
+Spread operator (....anyVariableName) => is used to add the new value in the existing function , variable or array
+
+Examples: 
+let array = ["esha", "hamna"];
+array
+(2) ['esha', 'hamna']
+let newArray = [...array, "zainab"];
+newArray
+(3) ['esha', 'hamna', 'zainab']
+newArray = [...newArray, "tahzeeb"]
+(4) ['esha', 'hamna', 'zainab', 'tahzeeb']
+newArray
+(4) ['esha', 'hamna', 'zainab', 'tahzeeb']
+
+
+
