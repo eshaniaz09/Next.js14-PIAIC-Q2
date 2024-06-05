@@ -1,0 +1,221 @@
+****************Yup-validation-schema**************
+
+Examples of yup schema: 
+
+ import { object, string, number, date, InferType } from 'yup';
+
+let userSchema = object({
+  name: string().required(),
+  age: number().required().positive().integer(),
+  email: string().email(),
+  website: string().url().nullable(),
+  createdOn: date().default(() => new Date()),
+});
+
+
+=> How to use yup in next.js project
+
+
+Terminal => npm i yup 
+
+Your .tsx file => import * as yup from 'yup'
+
+You can also globally define your yup schema outside the react element (.tsx function):
+
+const contactInfoValidationSchema = yup.object().shape({
+  userName: yup
+      .string()
+      .required("User name is required")
+      .min(4, "User name must be at least 4 characters")
+      .max(15, "User name must be at most 15 characters")
+      .matches(/^[A-Za-z\s]+$/, "User name must only contain alphabetic characters and spaces"),
+    userEmail: yup
+      .string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    userMessage: yup
+      .string()
+      .required("Message is required")
+ })
+
+Now : We have to  use trycatch to display the errors occur in the function called when the button is clicked or onSubmit button:
+
+  const onSubmitHandler = async (e: React.FormEvent) => {
+    e.preventDefault();  // Prevent the default form submission behavior
+ 
+    try {
+      const result = await contactInfoValidationSchema.validate(contactInfo, { abortEarly: false });
+      console.log(result);
+
+      let newContactList: contactTypes[] = [
+        ...contactList, contactInfo
+      ];
+      setContactList(newContactList);
+
+      console.log(newContactList);
+
+      setContactInfo({
+        userName: "",
+        userEmail: "",
+        userMessage: ""
+      });
+
+      setErrors([]);  // Clear any previous error messages
+    } catch (err: any) {
+      setErrors(err.errors); // Set new error messages if validation fails
+      console.log("error", err.name, err.errors);
+    }
+  };
+
+
+Note : 
+    *************** e.preventDefault(); ***************
+ 
+     => In React and other modern JavaScript frameworks, we often handle form submissions using JavaScript to update the application state or perform other tasks without refreshing the page. To achieve this, we need to prevent the default form submission behavior.
+     => By calling e.preventDefault() in the onSubmitHandler function, you prevent the form from reloading the page and allow your JavaScript code to handle the form submission. This way, you can validate the form data, update the state, and display errors or success messages within the same page, providing a smoother user experience.
+
+
+   ***************Why we use setErrors([]); **********
+     
+     => The line setErrors([]); is used to clear any previously stored error messages. This ensures that the errors from previous submissions do not persist and interfere with the current form submission process.
+     => setErrors([]); is called to reset the error state to an empty array, ensuring that only new errors from the current submission are displayed.
+     => By using setErrors([]);, you ensure that each form submission starts with a fresh error state, leading to a clearer and more user-friendly experience.
+   
+   **************Why we use { abortEarly: false }*********
+
+    => By default, yup stops validation upon encountering the first error (abortEarly: true).
+    => If you set abortEarly: false, yup will continue to validate all fields and collect all errors before returning. This allows you to present the user with a comprehensive list of all validation errors at once.
+    => Providing all validation errors at once improves the user experience. Users can correct all issues in one go, rather than fixing one error, resubmitting the form, and then seeing the next error.
+    => This approach is particularly useful for forms with multiple fields, ensuring that users are fully informed about all issues with their input.
+
+
+    ************Try-catch**************
+   =>Error Handling:
+    The try block contains the code that may throw an error. If an error occurs in the try block, the normal flow of execution stops, and control is transferred to the catch block.
+    The catch block contains the code that runs in response to an error thrown in the try block. This is where you can handle the error, for example, by logging it, displaying an error message to the user, or taking some corrective action.
+ 
+    =>Preventing Crashes
+    Without try...catch, an unhandled error can cause the entire application to crash or behave unpredictably.
+    Using try...catch ensures that your application can handle errors gracefully and continue to operate even if something goes wrong.
+
+    =>Managing Asynchronous Code:
+    When working with asynchronous code (like promises), errors can occur at various stages of the operation. Wrapping asynchronous operations in a try...catch block helps in managing these errors effectively
+
+
+   ****************async-await and promises*************
+
+   ### Understanding Promises
+
+#### What is a Promise?
+A **Promise** is an object representing the eventual completion (or failure) of an asynchronous operation and its resulting value. In JavaScript, promises provide a cleaner way to handle asynchronous operations compared to traditional callback-based approaches.
+
+#### States of a Promise:
+1. **Pending**: The initial state of a promise. The operation is ongoing.
+2. **Fulfilled**: The operation completed successfully. The promise has a resolved value.
+3. **Rejected**: The operation failed. The promise has a reason (error) for the failure.
+
+#### Basic Example of a Promise:
+```javascript
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const success = true; // Simulating success or failure
+    if (success) {
+      resolve('Operation succeeded');
+    } else {
+      reject('Operation failed');
+    }
+  }, 1000);
+});
+
+myPromise
+  .then(result => {
+    console.log(result); // Logs: "Operation succeeded" if resolved
+  })
+  .catch(error => {
+    console.error(error); // Logs: "Operation failed" if rejected
+  });
+```
+
+### Understanding async/await
+
+#### What is `async/await`?
+`async/await` is syntactic sugar built on top of promises, introduced in ECMAScript 2017 (ES8). It allows you to write asynchronous code in a more synchronous and readable manner.
+
+#### `async` Function:
+- Declares a function to be asynchronous.
+- Returns a promise implicitly.
+- Inside an `async` function, you can use `await`.
+
+#### `await` Expression:
+- Pauses the execution of the `async` function and waits for the promise to resolve or reject.
+- Can only be used inside `async` functions.
+
+#### Basic Example of async/await:
+```javascript
+const fetchData = async () => {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    console.log(data); // Logs the fetched data
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+fetchData();
+```
+
+### Why and When to Use Promises and async/await
+
+#### Advantages of Promises:
+1. **Better Readability**: Promises provide a cleaner, more understandable syntax compared to deeply nested callbacks (callback hell).
+2. **Chaining**: Promises can be chained with `.then()`, allowing sequential operations.
+3. **Error Handling**: Centralized error handling using `.catch()`.
+
+#### Advantages of async/await:
+1. **Simplicity**: Code that uses `async/await` is more straightforward and resembles synchronous code.
+2. **Error Handling**: Easier to handle errors using `try...catch` blocks.
+3. **Debugging**: Debugging is simpler because the code reads top to bottom.
+
+#### When to Use:
+- **Promises**: When you have a straightforward asynchronous operation or need to chain multiple asynchronous tasks.
+- **async/await**: When you want more readable and maintainable code, especially for complex asynchronous workflows.
+
+### Detailed Example with Both Promises and async/await
+
+#### Using Promises:
+```javascript
+const fetchUserData = () => {
+  return fetch('https://api.example.com/user')
+    .then(response => response.json())
+    .then(data => {
+      console.log('User Data:', data);
+    })
+    .catch(error => {
+      console.error('Error fetching user data:', error);
+    });
+};
+
+fetchUserData();
+```
+
+#### Using async/await:
+```javascript
+const fetchUserData = async () => {
+  try {
+    const response = await fetch('https://api.example.com/user');
+    const data = await response.json();
+    console.log('User Data:', data);
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+  }
+};
+
+fetchUserData();
+```
+
+### Conclusion
+- **Promises** provide a way to handle asynchronous operations with better readability and error handling than traditional callbacks.
+- **async/await** builds on promises, offering even cleaner and more synchronous-looking code.
+- Use **Promises** for simpler tasks or chaining.
+- Use **async/await** for more complex workflows or when you need the readability of synchronous code in asynchronous operations.
