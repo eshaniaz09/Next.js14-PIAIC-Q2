@@ -10,4 +10,4 @@ package.json => file contains the details , info and versions , dependencies , h
 
 public folder => contains all the assets=> videos , images, etc...
 
-app folder => also called app router , all of owr working is in app router folder
+app folder => also called app router , all of our  working is in app router folder
