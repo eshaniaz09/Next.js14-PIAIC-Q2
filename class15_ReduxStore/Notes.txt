@@ -1,0 +1,56 @@
+Next.js => 
+   useState=> Hook (state handling)
+=> when we store data in a components using use state , data is shared only 
+from parent to child like page.tsx is parent and <todoApp/> child must be inherited 
+=> if we want to share the data through props then component must be the child of component to which the data is shared
+=> problem: we want to share the data between components that have no parent child relationship
+poor practice then components want to communicate distinct
+
+
+
+Solution=> ***********************REDUX************************
+
+centralized system 
+
+redux store provides an architecture in which data is stored in a centralized place from where every component 
+receive data from that center store.
+=> redux is used in place of state props
+=> redux implementation in react
+=> flux is a library of redux 
+
+How to manage redux store:  we make boxes in a store . the size of the box depends on the size of that perticular catogery or size of data 
+=> boxes are called slices
+
+
+=> useSelector(store.students.rolNo) used when component want to read or select data from store
+=> flux architecture tells react must call/dispatch(action) action creator  in order to store the data in a centerlized store that is called (Reducer) slice manager. 
+action creator gives data to slice manager , then slice manager saves the or store data 
+
+If the react component do not make call or don't give data then the action creator takes data from the internet API in order to take data 
+=> action creator is the middle person that gives data to slice manager from internet API or react component . It dose not save data in store
+=> we create only one store for  one Application
+
+**********************************REACT-REDUX**************************
+React-redux library includes:
+
+=>Action creator function: 
+=>dispatch function
+=>UseSelector
+=>provider component is used to connect store with react component (we want provider component in order use "useSelector function")
+
+
+How to use redux-toolkit?
+
+
+Make a directory in app folder=> 
+app/GlobalRedux/Provider.tsx and store.ts
+GlobalRedux/Features/counter/counterSlice.ts
+
+
+Note: every redux component is a client side component so we have to use "use client" in every directory.
+
+
+
+=> We have to normally provide the provider in the layout.tsx file :
+ 
+ 
