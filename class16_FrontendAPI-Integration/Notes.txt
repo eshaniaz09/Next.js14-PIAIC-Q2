@@ -1,0 +1,53 @@
+*******************Frontend-API-Integration**********************
+It is a simple frontend application that integrates with a backend API to fetch and display data.
+The application is built using Next.js and uses Axios for making API requests.
+The API used in this application is a simple RESTful API that provides data in JSON format.
+
+=> How frontend development communicate with backend development:
+   * Fronted development gives requests to backend
+    Through api => REST api {The apis that give response in json formate are called rest api}
+                => Graphql api
+                => Socket (real time communication) : used for live connection means the requests and response time is very less like live steaming etc
+=> They communicate Through http protocol
+
+
+=> In order to connect the backend with frontend development ,the frontend developer wants to know the api used in backend and documentation of backend development
+=> There are many tools in market that writes the documentation of backend and gives to frontend for Integration like:
+                => Postman (Most popular)            
+                => Swagger (Most popular)            
+
+
+Example to call the data  from random api: rest.api in page.tsx of next.js
+
+  const getTodo = async () => {
+    try {
+      const Result = await axios.get('https://dummyjson.com/todos')
+      console.log(`Data from rest api:`, Result.data.todos);
+      
+    } catch (error) {
+
+      console.log(`Data not found! Error: ${error} `);
+      
+      
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note: 
+=> API stands for Application Programming Interface. In the context of APIs, the word Application refers to any software with a distinct function. Interface 
+can be thought of as a contract of service between two applications. This contract defines how the two communicate with each other using requests and responses.
+=> The apis that give response in json formate are called rest api
+
