@@ -1,0 +1,25 @@
+*************How The Images Videos Are Saving Database In Next.js****************
+
+
+
+=> Only text data is stored in Database, No file 
+
+=> Data is sent from browser to server and then stored in Database in the form of text
+
+
+=> To store the images in database we use storage service 
+=> The image fle is send to storage service that gives the url of that file. Thw=en that url are stored in database.
+
+
+=> texts are save in database but files are store in storage services 
+
+
+=> Some famous storage services in the world are : 
+                ** Amazon S3
+                ** Firebase Storage
+                ** Cloudinary
+                ** Google Cloud Storage
+                ** Microsoft Azure Blob Storage
+
+=> Example we can upload the file in the Firebase console / built / storage and the url of image and then we can we this url in our code. 
+
