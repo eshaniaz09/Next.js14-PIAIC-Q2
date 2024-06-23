@@ -29,9 +29,19 @@ Next.js can also connect with the traditional cms (IN this case , we are not usi
 ******************contentful CMS***************
 => home
 => content models (create different models of website like contact , blogs , services , projects)
-=> content (content entry)
+=> content (content entry in content models)
 => media
 => Apps 
+
+
+=> How to connect the content models of contentful with our next.js app?
+=> Contentfull cms provides us the contentful library which fetch the apis 
+=> We need to use the contentful library 
+=> rest api or stk (Software development kit)
+=> We need to install the contentful package in our next.js app.
+=> Then we need to import the contentful package in our next.js pages.
+=> Then we need to use the contentful api to fetch the data from the contentful cms.
+
 
 
 
