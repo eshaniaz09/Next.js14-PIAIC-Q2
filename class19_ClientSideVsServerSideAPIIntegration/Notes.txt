@@ -1,0 +1,74 @@
+*********************UseEffect-Hook******************
+
+=> If we want to call the function auto rather then click on the button in the client side rendering , then 
+use the react js feature "useEffect()" hook 
+=> It is used to handle the side effects in functional components.
+=> Parameters :  call back function , array 
+useEffect(()=>{
+    //call back function
+}, [array])
+
+=> If the array in the useEffect hook is empty , the call back function is called automatically when the client side component is rendered first time.
+=> It is also called component life set method. 
+=> It is only supported in the client side component.
+
+
+
+
+=>In the class 16 we render the json data by clicking on the button from client side , 
+Now we want to render that from the server side.
+
+***************Next.js fetch cache***************
+
+
+=> In order to do so we render the api integration from client side by using the fetch() which contains the caching in order to render the page faster  because axios have no caching system.
+=> client side api integration is faster then the server side api integration.
+When we use fetch(url) instead of axios.get(url) : 
+           client <=> server(browser) <=> dummy-server <=> database 
+
+=> This dummy server fetch data from database at the first request and store in it. Then when client again request or  refresh the page the rendering of the page is faster then the first time.  
+=> This catching system is used for the better refreshing or rendering of the page in server side api integration.
+=> Data fetching by using fetch() have the property of revalidate by time , revalidate by action => next.js gives us this support
+
+
+
+// **************Server side rendering of the data fetching from api****************
+
+/* eslint-disable react/jsx-key */
+const getTodo = async () => {
+  try {
+    const result = await fetch('https://dummyjson.com/todos')
+    const data = await result.json()
+    return data?.todos // Corrected data structure
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export default async function Home() {
+  const todos = await getTodo()
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <h1>Todo app</h1>
+      {todos && todos.map((todo) => {
+        return (
+          <div key={todo.id}>
+            {todo.id} - {todo.todo}
+          </div>
+        )
+      })}
+    </main>
+  );
+}
+
+
+
+
+
+
+
+Note: 
+=> When the html is render from server side , seo supported in next.js
+=> But if the json is render in the browser from server then seo is not supported.
+
