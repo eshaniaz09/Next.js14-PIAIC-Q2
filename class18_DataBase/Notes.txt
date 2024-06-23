@@ -1,0 +1,22 @@
+******************File-management-system****************
+
+=> In the past , the data is stored in the file system => file.txt
+=> File system is a way of organizing and storing files on a computer
+=> This system is very slow.
+=> The data fetch is very complicated and takes a lots of time.
+
+***************DataBase****************
+=> The solution of slow data fetching problem is database.
+=> Database is a collection of organized data that is stored in a way that allows for efficient retrieval and manipulation.
+=> Database is a software system that allows you to define, create, maintain, and manipulate databases.
+=> Every database stores the data in the file system but they have specific extensions to store data in file system to get get data in the fastest way 
+=> Every software makes its own extension like .ppt / .word / .psql to store data in a fastest way.
+=> In Short Database is used to make queries to retrieve the data in a short time.
+=> IT is much more faster then file system.
+=> We can read , delete , update data from database through server for security purpose.
+
+
+
+
+Note: 
+=> The data always store in the form of files in the hard drive(computer)
