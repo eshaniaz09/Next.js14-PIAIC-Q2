@@ -1,0 +1,5 @@
+******************Next.js 14 and AI Integration********************
+
+we can built AI powered applications by using :
+            **kaggle 
+            **hagging face
