@@ -5,7 +5,7 @@ Hardware server : when we write a code in html and css we upload it in server
 
 React is the client framework , used for only front end development (html,css and ts, react , angular , view.js : all are browser application it is not have any impact on server)
 Next.js is the server application ,it is also used in backend development
-we also call it as : next.js server, node.js server, python flask server, python django server , ph server
+we also call it as : next.js server, node.js server, python flask server, python django server , php server
 
 
 There are some servers that are pre-built-in like : Nginx or apache or netlify or surge
