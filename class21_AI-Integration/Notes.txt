@@ -3,4 +3,3 @@
 we can built AI powered applications by using :
             **kaggle 
             **hagging face
-We can also use buil in AI models 
