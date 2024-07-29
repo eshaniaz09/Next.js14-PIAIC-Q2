@@ -1,3 +1,13 @@
+Static website: 
+=> Only display of content , not change content on run time.
+=> No database , no server side scripting.
+=> We can change the content not frequently.
+Dynamic website:
+=> Display of content and change content on run time.
+=> Database , server side scripting.
+
+
+
 ********************CMS*********************
 
 => CMS is used for the pre-built-in backend development and database management with some limitations.

@@ -1,4 +1,5 @@
-const blogData = [{
+const blogData = [
+    {
     id: 1,
     slug: "top-software-house",
     description: "Top software houses" 
@@ -9,6 +10,11 @@ const blogData = [{
         description: "Software companies"
   }
 ]
+
+let myData = ['esha', 'fatima']
+myData = [...myData, 'masfa']
+console.log(myData)
+
 export default function Blog({ params }: { params: { slug: string } }) {
     const blog = blogData.filter((item)=> item.slug == params.slug)
     return (
